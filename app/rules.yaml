@@ -1,5 +1,5 @@
 Country:                    # name of the country to reconcile
-  active: true              # (bool) if the country is active
+  active:                   # (bool) if the country is active
   company_code:             # (str) 4-digit company code of the country
   local_currency:           # (str) 3-char uppercase code of the country's 'local currency of the  (e.g. EUR, USD, RUB)
   sales_organization_glob:  # (str) 4-digit code for global sales organization code of the country
