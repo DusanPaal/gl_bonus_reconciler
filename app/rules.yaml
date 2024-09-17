@@ -1,0 +1,15 @@
+Country:                    # name of the country to reconcile
+  active: true              # (bool) if the country is active
+  company_code:             # (str) 4-digit company code of the country
+  local_currency:           # (str) 3-char uppercase code of the country's 'local currency of the  (e.g. EUR, USD, RUB)
+  sales_organization_glob:  # (str) 4-digit code for global sales organization code of the country
+  sales_organization_loc:   # (str) 4-digit code for local sales organization code of the country
+  sales_offices:            # list of sales offices in the country
+    - "####"                # (str) 4-digit code for sales office
+  accounts:                 # list of accounts to reconcile
+    - 24182000              # (int) account number
+  accountants:              # (list) accountants responsible for the reconciliation to receive the report and notification
+    - name:                 # (str) name of the accountant
+      surname:              # (str) surname of the accountant
+      mail:                 # (str) email of the accountant
+      send_message:         # (bool) if the accountant should receive a notification

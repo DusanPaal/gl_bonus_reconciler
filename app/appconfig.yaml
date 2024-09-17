@@ -1,0 +1,96 @@
+sap:
+  gui_path: # (str) path to the local SAP GUI executable
+
+reconciliation:
+
+  rules_path: $appdir$\rules.yaml  
+
+  # (list) list of dates that are considered holidays
+  holidays: 
+    - 9999-01-01
+    - 9999-01-06
+    - 9999-04-07
+    - 9999-04-10
+    - 9999-05-01
+    - 9999-05-08
+    - 9999-07-05
+    - 9999-08-29
+    - 9999-09-01
+    - 9999-09-15
+    - 9999-11-01
+    - 9999-11-17
+    - 9999-12-24
+    - 9999-12-25
+    - 9999-12-26
+
+recovery:
+  recovery_dir: $appdir$\recovery
+  recovery_name: recovery.json
+
+data:
+  fbl3n_layout: # (str) name of the layout for the  data export from FBL3N
+  zsd25_layout: # (str) name of the layout for the  data export from ZSD25
+
+  temp_dir: $appdir$\temp
+  exports_dir: $appdir$\temp\$cocd$\exp
+  binaries_dir: $appdir$\temp\$cocd$\bin
+
+  text_summary_bin_name: text_summary_$cocd$_$acc$.feather
+  yearly_accounts_summary_bin_name: yearly_accs_summary_$cocd$.feather
+  bonus_data_summary_bin_name: bonus_data_summary_$cocd$.feather
+
+  fbl3n_data_export_name: fbl3n_$cocd$_accs_exp.txt
+  fbl3n_data_bin_name: fbl3n_$cocd$_accs_bin.feather
+
+  se16_kona_data_export_name: se16_$cocd$_kona_exp.txt
+  se16_kona_data_bin_name: se16_$cocd$_kona_bin.feather
+
+  se16_kote_data_export_name: se16_$cocd$_kote890_exp.txt
+  se16_kote_data_bin_name: se16_$cocd$_kote890_bin.feather
+
+  zsd25_global_data_export_name: zsd25_$cocd$_global_exp.txt
+  zsd25_global_data_bin_name: zsd25_$cocd$_global_bin.feather
+  zsd25_global_calcs_bin_name: zsd25_$cocd$_global_calcs_bin.feather
+
+  zsd25_local_data_export_name: zsd25_$cocd$_local_exp.txt
+  zsd25_local_data_bin_name: zsd25_$cocd$_local_bin.feather
+  zsd25_local_calcs_bin_name: zsd25_$cocd$_local_calcs_bin.feather
+  zsd25_local_conditions_data_bin_name: zsd25_$cocd$_local_cond_bin.feather
+
+  fs10n_data_export_name: fs10n_$cocd$_$acc$_summary_exp.txt
+  fs10n_data_bin_name: fs10n_$cocd$_$acc$_summary_bin.feather
+
+reports:
+  # (str) name of the report file, where $cocd$ is the company code. 
+  #The placeholder will be replaced with the actual company code during 
+  # the report generation  
+  report_name: Bonus_Reconciliation_Report_$cocd$.xlsx
+
+  # (str) path to the application directory where the reports will be saved
+  local_dir: $appdir$\reports
+
+messages:
+  requests:       # parameters for the user request emails
+    account:      # name of the account where user request emails are sent
+    mailbox:      # email address of the mailbox where user request account exists
+    server:       # address of the email server where the mailbox is hosted
+  notifications:  # parameters for the user notification emails
+    send:         # (bool) enable or disable sending of the notification emails)
+    port:         # (int) port number of the email SMTP server
+    host:         # (str) address of the email SMTP server
+    sender:       # (str) email address of the notification sending account
+    subject:      # (str) subject of the notification emails
+    template_dir: $appdir$\notifications
+    templates:
+      general: template_general.html
+      warning: template_warning.html
+      error: template_error.html
+
+database:
+  host:         # (str) host name or IP address of the database server
+  port:         # (int) port number to connect to the database
+  name:         # (Str) database name
+  user:         # (str) user name for logging into the database
+  password:     # (str) password to access teh database
+  schema:       # (str) anme of teh database shcema that hosts the data tables for the bonus reconciler
+  lc_monetary:  # (str) a 3-char uppercase code of local currency for the database (e.g. 'USD')
